@@ -6,7 +6,7 @@ export default defineConfig({
   plugins: [react()],
   build: {
     lib: {
-      entry: './src/index.js',
+      entry: './src/components/index.tsx',
       name: 'WoodDeck',
       fileName: (format) => `woodDeck.${format}.js`,
       formats: ['es', 'umd', 'iife'],
