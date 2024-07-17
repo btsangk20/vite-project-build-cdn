@@ -6,6 +6,7 @@ import { nodePolyfills } from 'vite-plugin-node-polyfills';
 export default defineConfig({
   plugins: [react(), nodePolyfills()],
   build: {
+    minify: false,
     lib: {
       entry: './src/index.js',
       name: 'WoodDeck',
