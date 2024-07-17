@@ -1,7 +1,19 @@
+import * as THREE from '@react-three/fiber';
+import { useEffect, useState } from 'react';
+
 export const Button = () => {
+  const [count, setCount] = useState(1);
+
+  useEffect(() => {
+    setCount((prev) => prev + 1);
+    console.log(count);
+  });
   return (
-    <div>
-      <h1>Hello from MyComponent!</h1>
-    </div>
+    <THREE.Canvas>
+      <mesh>
+        <boxBufferGeometry />
+        <meshBasicMaterial color='hotpink' />
+      </mesh>
+    </THREE.Canvas>
   );
 };

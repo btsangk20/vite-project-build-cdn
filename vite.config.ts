@@ -14,11 +14,12 @@ export default defineConfig({
       formats: ['es', 'umd', 'iife'],
     },
     rollupOptions: {
-      external: ['react', 'react-dom'],
+      external: ['react', 'react-dom', '@react-three/fiber'],
       output: {
         globals: {
           react: 'React',
           'react-dom': 'ReactDOM',
+          '@react-three/fiber': 'ReactThreeFiber',
         },
       },
     },
