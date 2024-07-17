@@ -1,5 +1,5 @@
 import { sum, add } from './utils/calculator.util';
-import { Button } from './components/index';
+import Button from './components/index';
 
 window.process = {
   env: {
