@@ -1,5 +1,7 @@
-import { sum, add, logUuid } from './utils/calculator.util';
-// import Button from './components/index';
+import { sum, logUuid, box } from './utils/calculator.util';
+import { ThreeBox } from './components/ThreeBox';
+import { ButtonHTML } from './components/ButtonHTML';
+import { ReactButton } from './components/ReactButton';
 
 window.process = {
   env: {
@@ -8,9 +10,12 @@ window.process = {
 };
 
 window.webGDL = {
-  add,
   sum,
   logUuid,
+  box,
+  ThreeBox,
+  ButtonHTML,
+  ReactButton,
 };
 
 // export { sum, Button };

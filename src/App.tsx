@@ -1,10 +1,12 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import reactLogo from './assets/react.svg';
 import viteLogo from '/vite.svg';
 import './App.css';
 // import { createRoot } from 'react-dom/client';
-// import { Button } from './components';
+import { ButtonHTML } from './components/ButtonHTML';
+import { ReactButton } from './components/ReactButton';
+import { ThreeBox } from './components/ThreeBox';
 
 function App() {
   const [count, setCount] = useState(0);
@@ -13,20 +15,11 @@ function App() {
 
   console.log(newWindow);
 
-  useEffect(() => {
-    // const interval = setInterval(() => {
-    //   const { Button } = newWindow.webGDL;
-    //   console.log('Button', Button);
-    //   const container = document.getElementById('component-app');
-    //   const root = createRoot(container);
-    //   root.render(<Button></Button>);
-    //   clearInterval(interval);
-    // }, 100);
-  }, []);
-
   return (
     <>
-      {/* <Button /> */}
+      <ThreeBox />
+      <ButtonHTML />
+      <ReactButton />
       <div id='component-app'>
         <a href='https://vitejs.dev' target='_blank'>
           <img src={viteLogo} className='logo' alt='Vite logo' />
