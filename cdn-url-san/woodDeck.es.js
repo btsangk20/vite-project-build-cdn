@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from "react";
-import * as THREE from "@react-three/fiber";
+import React from "react";
+import { Canvas } from "@react-three/fiber";
 function getDefaultExportFromCjs(x) {
   return x && x.__esModule && Object.prototype.hasOwnProperty.call(x, "default") ? x["default"] : x;
 }
@@ -1086,17 +1086,12 @@ if (process$1.env.NODE_ENV === "production") {
   jsxRuntime.exports = requireReactJsxRuntime_development();
 }
 var jsxRuntimeExports = jsxRuntime.exports;
-const Button = () => {
-  const [count, setCount] = useState(1);
-  useEffect(() => {
-    setCount((prev) => prev + 1);
-    console.log(count);
-  });
-  return /* @__PURE__ */ jsxRuntimeExports.jsx(THREE.Canvas, { children: /* @__PURE__ */ jsxRuntimeExports.jsxs("mesh", { children: [
-    /* @__PURE__ */ jsxRuntimeExports.jsx("boxBufferGeometry", {}),
-    /* @__PURE__ */ jsxRuntimeExports.jsx("meshBasicMaterial", { color: "hotpink" })
+function Button() {
+  return /* @__PURE__ */ jsxRuntimeExports.jsx(Canvas, { children: /* @__PURE__ */ jsxRuntimeExports.jsxs("mesh", { children: [
+    /* @__PURE__ */ jsxRuntimeExports.jsx("boxGeometry", { args: [1, 1, 1] }),
+    /* @__PURE__ */ jsxRuntimeExports.jsx("meshStandardMaterial", { color: "hotpink" })
   ] }) });
-};
+}
 window.process = {
   env: {
     NODE_ENV: "production"

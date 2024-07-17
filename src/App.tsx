@@ -1,9 +1,12 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import { useState } from 'react';
+// import { useEffect, useState } from 'react';
 import reactLogo from './assets/react.svg';
 import viteLogo from '/vite.svg';
 import './App.css';
+import { useState } from 'react';
 // import { createRoot } from 'react-dom/client';
+// import { createRoot } from 'react-dom/client';
+import { Button } from './components';
 
 function App() {
   const [count, setCount] = useState(0);
@@ -27,6 +30,7 @@ function App() {
 
   return (
     <>
+      <Button />
       <div id='component-app'>
         <a href='https://vitejs.dev' target='_blank'>
           <img src={viteLogo} className='logo' alt='Vite logo' />

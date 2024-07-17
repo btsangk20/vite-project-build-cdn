@@ -1,24 +1,5 @@
-(function(global, factory) {
-  typeof exports === "object" && typeof module !== "undefined" ? factory(exports, require("react"), require("@react-three/fiber")) : typeof define === "function" && define.amd ? define(["exports", "react", "@react-three/fiber"], factory) : (global = typeof globalThis !== "undefined" ? globalThis : global || self, factory(global.WoodDeck = {}, global.React, global.ReactThreeFiber));
-})(this, function(exports2, React, THREE) {
+var WoodDeck = function(exports, React2, fiber) {
   "use strict";
-  function _interopNamespaceDefault(e) {
-    const n = Object.create(null, { [Symbol.toStringTag]: { value: "Module" } });
-    if (e) {
-      for (const k in e) {
-        if (k !== "default") {
-          const d = Object.getOwnPropertyDescriptor(e, k);
-          Object.defineProperty(n, k, d.get ? d : {
-            enumerable: true,
-            get: () => e[k]
-          });
-        }
-      }
-    }
-    n.default = e;
-    return Object.freeze(n);
-  }
-  const THREE__namespace = /* @__PURE__ */ _interopNamespaceDefault(THREE);
   function getDefaultExportFromCjs(x) {
     return x && x.__esModule && Object.prototype.hasOwnProperty.call(x, "default") ? x["default"] : x;
   }
@@ -197,7 +178,7 @@
   function requireReactJsxRuntime_production_min() {
     if (hasRequiredReactJsxRuntime_production_min) return reactJsxRuntime_production_min;
     hasRequiredReactJsxRuntime_production_min = 1;
-    var f = React, k = Symbol.for("react.element"), l = Symbol.for("react.fragment"), m = Object.prototype.hasOwnProperty, n = f.__SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED.ReactCurrentOwner, p = { key: true, ref: true, __self: true, __source: true };
+    var f = React2, k = Symbol.for("react.element"), l = Symbol.for("react.fragment"), m = Object.prototype.hasOwnProperty, n = f.__SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED.ReactCurrentOwner, p = { key: true, ref: true, __self: true, __source: true };
     function q(c, a, g) {
       var b, d = {}, e = null, h = null;
       void 0 !== g && (e = "" + g);
@@ -219,7 +200,7 @@
     hasRequiredReactJsxRuntime_development = 1;
     if (process$1.env.NODE_ENV !== "production") {
       (function() {
-        var React$1 = React;
+        var React$1 = React2;
         var REACT_ELEMENT_TYPE = Symbol.for("react.element");
         var REACT_PORTAL_TYPE = Symbol.for("react.portal");
         var REACT_FRAGMENT_TYPE = Symbol.for("react.fragment");
@@ -729,9 +710,9 @@
           }
           return config.key !== void 0;
         }
-        function warnIfStringRefCannotBeAutoConverted(config, self2) {
+        function warnIfStringRefCannotBeAutoConverted(config, self) {
           {
-            if (typeof config.ref === "string" && ReactCurrentOwner.current && self2 && ReactCurrentOwner.current.stateNode !== self2) {
+            if (typeof config.ref === "string" && ReactCurrentOwner.current && self && ReactCurrentOwner.current.stateNode !== self) {
               var componentName = getComponentNameFromType(ReactCurrentOwner.current.type);
               if (!didWarnAboutStringRefs[componentName]) {
                 error('Component "%s" contains the string ref "%s". Support for string refs will be removed in a future major release. This case cannot be automatically converted to an arrow function. We ask you to manually fix this case by using useRef() or createRef() instead. Learn more about using refs safely here: https://reactjs.org/link/strict-mode-string-ref', getComponentNameFromType(ReactCurrentOwner.current.type), config.ref);
@@ -770,7 +751,7 @@
             });
           }
         }
-        var ReactElement = function(type, key, ref, self2, source, owner, props) {
+        var ReactElement = function(type, key, ref, self, source, owner, props) {
           var element = {
             // This tag allows us to uniquely identify this as a React Element
             $$typeof: REACT_ELEMENT_TYPE,
@@ -794,7 +775,7 @@
               configurable: false,
               enumerable: false,
               writable: false,
-              value: self2
+              value: self
             });
             Object.defineProperty(element, "_source", {
               configurable: false,
@@ -809,7 +790,7 @@
           }
           return element;
         };
-        function jsxDEV(type, config, maybeKey, source, self2) {
+        function jsxDEV(type, config, maybeKey, source, self) {
           {
             var propName;
             var props = {};
@@ -829,7 +810,7 @@
             }
             if (hasValidRef(config)) {
               ref = config.ref;
-              warnIfStringRefCannotBeAutoConverted(config, self2);
+              warnIfStringRefCannotBeAutoConverted(config, self);
             }
             for (propName in config) {
               if (hasOwnProperty.call(config, propName) && !RESERVED_PROPS.hasOwnProperty(propName)) {
@@ -853,7 +834,7 @@
                 defineRefPropWarningGetter(props, displayName);
               }
             }
-            return ReactElement(type, key, ref, self2, source, ReactCurrentOwner.current, props);
+            return ReactElement(type, key, ref, self, source, ReactCurrentOwner.current, props);
           }
         }
         var ReactCurrentOwner$1 = ReactSharedInternals.ReactCurrentOwner;
@@ -1008,7 +989,7 @@
           }
         }
         var didWarnAboutKeySpread = {};
-        function jsxWithValidation(type, props, key, isStaticChildren, source, self2) {
+        function jsxWithValidation(type, props, key, isStaticChildren, source, self) {
           {
             var validType = isValidElementType(type);
             if (!validType) {
@@ -1035,7 +1016,7 @@
               }
               error("React.jsx: type is invalid -- expected a string (for built-in components) or a class/function (for composite components) but got: %s.%s", typeString, info);
             }
-            var element = jsxDEV(type, props, key, source, self2);
+            var element = jsxDEV(type, props, key, source, self);
             if (element == null) {
               return element;
             }
@@ -1105,17 +1086,12 @@
     jsxRuntime.exports = requireReactJsxRuntime_development();
   }
   var jsxRuntimeExports = jsxRuntime.exports;
-  const Button = () => {
-    const [count, setCount] = React.useState(1);
-    React.useEffect(() => {
-      setCount((prev) => prev + 1);
-      console.log(count);
-    });
-    return /* @__PURE__ */ jsxRuntimeExports.jsx(THREE__namespace.Canvas, { children: /* @__PURE__ */ jsxRuntimeExports.jsxs("mesh", { children: [
-      /* @__PURE__ */ jsxRuntimeExports.jsx("boxBufferGeometry", {}),
-      /* @__PURE__ */ jsxRuntimeExports.jsx("meshBasicMaterial", { color: "hotpink" })
+  function Button() {
+    return /* @__PURE__ */ jsxRuntimeExports.jsx(fiber.Canvas, { children: /* @__PURE__ */ jsxRuntimeExports.jsxs("mesh", { children: [
+      /* @__PURE__ */ jsxRuntimeExports.jsx("boxGeometry", { args: [1, 1, 1] }),
+      /* @__PURE__ */ jsxRuntimeExports.jsx("meshStandardMaterial", { color: "hotpink" })
     ] }) });
-  };
+  }
   window.process = {
     env: {
       NODE_ENV: "production"
@@ -1125,7 +1101,8 @@
     sum,
     Button
   };
-  exports2.Button = Button;
-  exports2.sum = sum;
-  Object.defineProperty(exports2, Symbol.toStringTag, { value: "Module" });
-});
+  exports.Button = Button;
+  exports.sum = sum;
+  Object.defineProperty(exports, Symbol.toStringTag, { value: "Module" });
+  return exports;
+}({}, React, ReactThreeFiber);
