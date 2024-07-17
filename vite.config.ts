@@ -1,12 +1,13 @@
 import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
+import { nodePolyfills } from 'vite-plugin-node-polyfills';
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  plugins: [react()],
+  plugins: [react(), nodePolyfills()],
   build: {
     lib: {
-      entry: './src/components/index.tsx',
+      entry: './src/index.js',
       name: 'WoodDeck',
       fileName: (format) => `woodDeck.${format}.js`,
       formats: ['es', 'umd', 'iife'],
@@ -22,4 +23,3 @@ export default defineConfig({
     },
   },
 });
-
