@@ -1,12 +1,14 @@
-import { Canvas } from '@react-three/fiber';
+import { useState } from 'react';
 
 export function Button() {
+  const [count, setCount] = useState(0);
   return (
-    <Canvas>
-      <mesh>
-        <boxGeometry args={[1, 1, 1]} />
-        <meshStandardMaterial color={'hotpink'} />
-      </mesh>
-    </Canvas>
+    <div
+      onClick={() => {
+        setCount(count + 1);
+      }}
+    >
+      Button {count}
+    </div>
   );
 }

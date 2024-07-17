@@ -1,5 +1,7 @@
-import { Button } from "antd";
+import { Button } from 'antd';
 
 const sum = (a: number, b: number): number => a + b;
 
-export { sum, Button };
+const add = (a: number, b: number): number => a + b;
+
+export { sum, Button, add };
