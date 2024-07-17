@@ -1,31 +1,28 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-// import { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import reactLogo from './assets/react.svg';
 import viteLogo from '/vite.svg';
 import './App.css';
-import { useState } from 'react';
 // import { createRoot } from 'react-dom/client';
 // import { Button } from './components';
 
 function App() {
   const [count, setCount] = useState(0);
 
-  // const newWindow = window as any;
+  const newWindow = window as any;
 
-  // console.log(newWindow);
+  console.log(newWindow);
 
-  // useEffect(() => {
-  //   const interval = setInterval(() => {
-  //     const { Button } = newWindow.webGDL;
-
-  //     const container = document.getElementById('component-app');
-
-  //     const root = createRoot(container);
-  //     root.render(<Button></Button>);
-
-  //     clearInterval(interval);
-  //   }, 100);
-  // }, []);
+  useEffect(() => {
+    // const interval = setInterval(() => {
+    //   const { Button } = newWindow.webGDL;
+    //   console.log('Button', Button);
+    //   const container = document.getElementById('component-app');
+    //   const root = createRoot(container);
+    //   root.render(<Button></Button>);
+    //   clearInterval(interval);
+    // }, 100);
+  }, []);
 
   return (
     <>
