@@ -14,20 +14,13 @@ export default defineConfig({
       formats: ['es', 'umd', 'iife'],
     },
     rollupOptions: {
-      external: [
-        'react',
-        'react-dom',
-        '@react-three/fiber',
-        'three',
-        '@types/three',
-      ],
+      external: ['react', 'react-dom', 'uuid', '@types/uuid'],
       output: {
         globals: {
           react: 'React',
           'react-dom': 'ReactDOM',
-          '@react-three/fiber': 'ReactThreeFiber',
-          three: 'Three',
-          '@types/three': 'TypescriptThree',
+          uuid: 'uuid',
+          '@types/uuid': 'uuid',
         },
       },
     },

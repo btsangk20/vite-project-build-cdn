@@ -1,4 +1,4 @@
-import { sum, add, box } from './utils/calculator.util';
+import { sum, add, logUuid } from './utils/calculator.util';
 // import Button from './components/index';
 
 window.process = {
@@ -10,7 +10,7 @@ window.process = {
 window.webGDL = {
   add,
   sum,
-  box,
+  logUuid,
 };
 
 // export { sum, Button };
