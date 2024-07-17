@@ -1,6 +1,5 @@
 import { sum } from './utils/calculator.util';
-import { Button } from 'antd';
-
+import { Button } from './components/index';
 window.process = {
   env: {
     NODE_ENV: 'production',
